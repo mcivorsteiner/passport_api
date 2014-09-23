@@ -17,5 +17,11 @@ describe Api::BoatsController do
       expect(json["capacity"]).to eq(12)
       expect(json["name"]).to eq("Amazon Express")
     end
+
+    it "creates boat with correct params" do
+      expect {
+        post :create, new_boat_params
+      }.to change { Boat.count }.by(1)
+    end
   end
 end
