@@ -1,2 +1,4 @@
-class BookingsController < ApplicationController
+module Api
+  class BookingsController < ApplicationController
+  end
 end
