@@ -3,7 +3,7 @@ module Api
     def create
       @timeslot = Timeslot.new(timeslot_params)
       if @timeslot.save
-        render :json => { id: @timeslot.id, start_time: @timeslot.start_time.to_time.to_i, duration: @timeslot.duration, availability: 0, customer_count: 0, boats: []}
+        render :json => @timeslot.api_response
       else
         render :json => { message: "Issue with boat parameters"}, status: 404
       end
