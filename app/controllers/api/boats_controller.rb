@@ -10,6 +10,10 @@ module Api
     end
 
     def index
+      @boats = Boat.all.map do |boat|
+        { id: boat.id, capacity: boat.capacity, name: boat.name }
+      end
+      render :json => @boats
     end
 
     private
