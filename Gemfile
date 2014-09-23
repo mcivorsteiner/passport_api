@@ -41,3 +41,13 @@ gem 'unicorn'
 # gem 'debugger', group: [:development, :test]
 
 gem 'rails-api'
+
+group :development, :test do
+  gem 'rspec'
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+end
