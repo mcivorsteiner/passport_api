@@ -8,7 +8,7 @@ module Api
         assignment.bookings.create(group_size: group_size)
         render :json => { message: "Booking saved"}
       else
-        render :json => { message: "Booking not saved.  Either no availability or not valid timeslot_id"}, status: 404
+        render :json => { message: "Booking not saved.  Either no availability or not valid timeslot_id"}, status: 400
       end
     end
   end

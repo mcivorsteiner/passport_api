@@ -7,7 +7,7 @@ module Api
         timeslot.boats << boat
         render :json => { message: "Assignment saved"}
       else
-        render :json => { message: "Assignment not saved.  Check existence and vallidity of parameters"}, status: 404
+        render :json => { message: "Assignment not saved.  Check existence and validity of parameters"}, status: 404
       end
     end
   end

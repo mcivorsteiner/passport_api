@@ -5,7 +5,7 @@ module Api
       if @timeslot.save
         render :json => @timeslot.api_response
       else
-        render :json => { message: "Issue with boat parameters"}, status: 404
+        render :json => { message: "Issue with boat parameters"}, status: 400
       end
     end
 

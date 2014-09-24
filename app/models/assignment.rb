@@ -14,6 +14,6 @@ class Assignment < ActiveRecord::Base
   end
 
   def boat_available?
-    boat_overlapping_assignments.empty?
+    boat_overlapping_assignments.empty? || (boat_overlapping_assignments.first.id == id)
   end
 end
