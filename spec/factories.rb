@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :timeslot do
     start_time { 1411484400 }
-    duration { 30 + rand(120) }
+    end_time { 1411520400 }
   end
 
   factory :boat do

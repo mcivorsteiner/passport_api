@@ -19,7 +19,8 @@ module Api
 
     def timeslot_params
       start_time = unix_time_to_datetime(params['timeslot']['start_time'])
-      { start_time: start_time, duration: params['timeslot']['duration']}
+      end_time = start_time + params['timeslot']['duration'].to_i.minutes
+      { start_time: start_time, end_time: end_time }
     end
 
     def unix_time_to_datetime(unix_time)

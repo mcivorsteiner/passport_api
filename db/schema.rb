@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20140923033833) do
 
   create_table "timeslots", force: true do |t|
     t.datetime "start_time"
-    t.integer  "duration"
+    t.datetime "end_time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

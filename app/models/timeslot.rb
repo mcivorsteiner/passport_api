@@ -23,6 +23,10 @@ class Timeslot < ActiveRecord::Base
     assignments.select { |assignment| assignment.availability >= group_size }
   end
 
+  def duration
+    ((end_time - start_time)/60).to_i
+  end
+
   def api_response
     { 
       id: id, 
