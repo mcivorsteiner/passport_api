@@ -19,6 +19,10 @@ class Timeslot < ActiveRecord::Base
     bookings.sum(:group_size)
   end
 
+  def assignments_for_size(group_size)
+    assignments.select { |assignment| assignment.availability >= group_size }
+  end
+
   def api_response
     { 
       id: id, 

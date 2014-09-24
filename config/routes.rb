@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     resources :boats, only: [:index, :create]
     resources :timeslots, only: [:index, :create]
     resources :assignments, only: [:create]
+    resources :bookings, only: [:create]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
