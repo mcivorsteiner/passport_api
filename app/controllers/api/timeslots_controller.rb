@@ -10,6 +10,9 @@ module Api
     end
 
     def index
+      date = Time.parse(params['date'])
+      @timeslots = Timeslot.where(start_time: date.beginning_of_day..date.end_of_day)
+      render :json => @timeslots.map{ |timeslot| timeslot.api_response }
     end
 
     private
@@ -22,5 +25,6 @@ module Api
     def unix_time_to_datetime(unix_time)
       Time.at(unix_time.to_i).to_datetime
     end
+
   end
 end
